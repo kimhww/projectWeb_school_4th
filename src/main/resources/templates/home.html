@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>웹 사이트 홈 화면</title>
+  <style>
+    /* 전체 스타일 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 헤더 스타일 */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    header nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* 배너 스타일 */
+    #banner {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    #banner h2 {
+      margin: 0;
+    }
+
+    /* 기능 목록 스타일 */
+    #features {
+      padding: 20px;
+    }
+
+    #features ul {
+      list-style-type: circle;
+    }
+
+    /* 회원가입 및 로그인 스타일 */
+    section#signup, section#login {
+      background-color: #f5f5f5;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    section#signup h2, section#login h2 {
+      margin: 0;
+    }
+
+    section#signup form, section#login form {
+      margin-top: 10px;
+    }
+
+    section#signup label, section#login label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    section#signup input[type="text"],
+    section#signup input[type="email"],
+    section#signup input[type="password"],
+    section#login input[type="email"],
+    section#login input[type="password"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    section#signup input[type="submit"],
+    section#login input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    /* 푸터 스타일 */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>웹 사이트</h1>
+  <nav>
+    <ul>
+      <li><a href="#">홈</a></li>
+      <li><a href="#">서비스</a></li>
+      <li><a href="#">고객 지원</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="banner">
+    <h2>웹 사이트 배너</h2>
+    <p>배너 내용을 여기에 추가하세요.</p>
+  </section>
+
+  <section id="features">
+    <h2>기능</h2>
+    <ul>
+      <li>기능 1</li>
+      <li>기능 2</li>
+      <li>기능 3</li>
+    </ul>
+  </section>
+
+  <section id="signup">
+    <h2>회원가입</h2>
+    <form>
+      <label for="name">이름:</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">이메일:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="password">비밀번호:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <input type="submit" value="회원가입">
+    </form>
+  </section>
+
+  <section id="login">
+    <h2>로그인</h2>
+    <form>
+      <label for="email">이메일:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="password">비밀번호:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <input type="submit" value="로그인">
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>저작권 © 2023 웹 사이트. All rights reserved.</p>
+</footer>
+</body>
+</html>
