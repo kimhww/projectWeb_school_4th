@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>웹 사이트 홈 화면</title>
+  <title>My Chef</title>
   <style>
     /* 전체 스타일 */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     /* 헤더 스타일 */
@@ -15,6 +18,7 @@
       background-color: #333;
       color: #fff;
       padding: 20px;
+      text-align: center;
     }
 
     header h1 {
@@ -22,19 +26,21 @@
     }
 
     header nav ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
+      margin: 0; /* 바깥쪽 여백을 0으로 설정하여 기본 여백을 제거합니다. */
+      padding: 0; /* 내부 여백을 0으로 설정하여 기본 여백을 제거합니다. */
+      list-style-type: none; /* 목록 항목 앞의 기본 목록 마커를 제거합니다. */
+      display: flex; /* Flexbox 레이아웃을 사용합니다. */
+      justify-content: center; /* 메뉴 항목을 수평 중앙으로 정렬합니다. */
     }
 
     header nav ul li {
-      display: inline;
-      margin-right: 10px;
+      display: inline; /* 메뉴 항목을 인라인 요소로 표시합니다. */
+      margin-right: 100px; /* 오른쪽 여백을 10px로 설정하여 각 항목 사이에 공간을 추가합니다. */
     }
 
     header nav ul li a {
-      color: #fff;
-      text-decoration: none;
+      color: #fff; /* 링크 텍스트의 색상을 흰색으로 지정합니다. */
+      text-decoration: none; /* 링크에 밑줄을 제거합니다. */
     }
 
     /* 배너 스타일 */
@@ -50,49 +56,24 @@
     /* 기능 목록 스타일 */
     #features {
       padding: 20px;
+      text-align: center;
     }
 
     #features ul {
-      list-style-type: circle;
-    }
-
-    /* 회원가입 및 로그인 스타일 */
-    section#signup, section#login {
-      background-color: #f5f5f5;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    section#signup h2, section#login h2 {
+      list-style-type: none;
       margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
     }
 
-    section#signup form, section#login form {
-      margin-top: 10px;
+    #features ul li {
+      margin-right: 20px;
     }
 
-    section#signup label, section#login label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    section#signup input[type="text"],
-    section#signup input[type="email"],
-    section#signup input[type="password"],
-    section#login input[type="email"],
-    section#login input[type="password"] {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-
-    section#signup input[type="submit"],
-    section#login input[type="submit"] {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
+    #features ul li a {
+      color: #333;
+      text-decoration: none;
     }
 
     /* 푸터 스타일 */
@@ -101,13 +82,51 @@
       color: #fff;
       padding: 20px;
       text-align: center;
+      margin-top: auto;
+    }
+
+    /* 추가된 스타일 */
+    #user-panel {
+      text-align: right;
+      padding: 10px;
+    }
+
+    #user-panel a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    #search-form {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    #search-form input[type="text"] {
+      padding: 5px;
+    }
+
+    #search-form input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 <header>
-  <h1>웹 사이트</h1>
+  <h1>My Chef</h1>
   <nav>
+    <div id="user-panel">
+      <a href="#">로그인</a>
+      <a href="#">회원가입</a>
+      <form id="search-form">
+        <input type="text" placeholder="검색어를 입력해주세요">
+        <input type="submit" value="검색">
+      </form>
+    </div>
     <ul>
       <li><a href="#">홈</a></li>
       <li><a href="#">서비스</a></li>
@@ -117,48 +136,12 @@
 </header>
 
 <main>
+
   <section id="banner">
     <h2>웹 사이트 배너</h2>
     <p>배너 내용을 여기에 추가하세요.</p>
   </section>
 
-  <section id="features">
-    <h2>기능</h2>
-    <ul>
-      <li>기능 1</li>
-      <li>기능 2</li>
-      <li>기능 3</li>
-    </ul>
-  </section>
-
-  <section id="signup">
-    <h2>회원가입</h2>
-    <form>
-      <label for="name">이름:</label>
-      <input type="text" id="name" name="name" required><br>
-
-      <label for="email">이메일:</label>
-      <input type="email" id="email" name="email" required><br>
-
-      <label for="password">비밀번호:</label>
-      <input type="password" id="password" name="password" required><br>
-
-      <input type="submit" value="회원가입">
-    </form>
-  </section>
-
-  <section id="login">
-    <h2>로그인</h2>
-    <form>
-      <label for="email">이메일:</label>
-      <input type="email" id="email" name="email" required><br>
-
-      <label for="password">비밀번호:</label>
-      <input type="password" id="password" name="password" required><br>
-
-      <input type="submit" value="로그인">
-    </form>
-  </section>
 </main>
 
 <footer>
