@@ -11,4 +11,14 @@ public class webController {
         return "home";
     }
 
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
+
+    @GetMapping("/signUp")
+    public String signUpPage() {
+        return "signUp";
+    }
+
 }
