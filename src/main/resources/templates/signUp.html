@@ -15,7 +15,7 @@
 
     h1 {
       position: absolute;
-      top: 0;
+      top: 10%;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
@@ -39,30 +39,59 @@
     }
 
     input[type="text"],
-    input[type="password"] {
+    input[type="password"],
+    input[type="checkPassword"],
+    input[type="eMail"]{
       width: 100%;
       padding: 5px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
-    input[type="submit"] {
+    .signupBtn {
       background-color: #333;
       color: #fff;
       border: none;
       padding: 5px 10px;
       cursor: pointer;
-      margin-top: 40px;
+      display: block;
+      margin: 40px auto 0;
     }
+
+    .insertId,
+    .insertPw,
+    .insertChkPw,
+    .insertEMail{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   </style>
 </head>
 <body>
 <h1>회원가입</h1>
 <form action="/signup" method="POST" class="signup-form">
   <label for="username">ID</label>
-  <input type="text" id="username" name="username" required><br>
+  <div class="insertId">
+    <input type="text" id="username" name="username" required><br>
+  </div>
+
   <label for="password">PASSWORD</label>
-  <input type="password" id="password" name="password" required><br>
-  <input type="submit" value="회원가입">
+  <div class="insertPw">
+    <input type="password" id="password" name="password" required><br>
+  </div>
+
+  <label for="checkPassword">CHECK PASSWORD</label>
+  <div class="insertChkPw">
+    <input type="checkPassword" id="checkPassword" name="password" required><br>
+  </div>
+
+  <label for="eMail">E-Mail</label>
+  <div class="insertEMail">
+    <input type="eMail" id="eMail" name="eMail" required><br>
+  </div>
+
+  <input type="submit" value="회원가입" class="signupBtn">
 </form>
 </body>
 </html>
