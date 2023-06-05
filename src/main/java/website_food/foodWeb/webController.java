@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class webController {
 
     @GetMapping("/home")
-    public String boardWriteForm() {
+    public String home() {
         return "home";
     }
 
@@ -19,6 +19,16 @@ public class webController {
     @GetMapping("/signUp")
     public String signUpPage() {
         return "signUp";
+    }
+
+    @GetMapping("/addPlace")
+    public String addPlacePage(){
+        return "addPlace";
+    }
+
+    @GetMapping("/qna")
+    public String qnaBoard(){
+        return "qnaBoard";
     }
 
 }

@@ -48,7 +48,6 @@
   header nav ul li {
     display: inline; /* 메뉴 항목을 인라인 요소로 표시합니다. */
     margin-right: 100px; /* 오른쪽 여백을 10px로 설정하여 각 항목 사이에 공간을 추가합니다. */
-    text-align: center;
   }
 
   header nav ul li a {
@@ -133,6 +132,12 @@
     height: 400px;
     margin: 0 auto;
   }
+  #addbtn {
+    padding: 10px;
+    margin: 40px auto 0;
+    display: block;
+
+  }
 
 </style>
 <body>
@@ -140,8 +145,6 @@
   <h1 href="/home">My Chef</h1>
   <nav>
     <div id="user-panel">
-      <a href="/login">로그인</a>
-      <a href="/signUp">회원가입</a>
       <form id="search-form">
         <input type="text" placeholder="검색어를 입력해주세요">
         <input type="submit" value="검색">
@@ -150,26 +153,25 @@
     <ul>
       <li><a href="/home">홈</a></li>           <!--웹 홈 화면-->
       <li><a href="/addPlace">장소 등록</a></li>            <!--장소 등록 화면-->
-      <li><a href="/qna">고객 지원</a></li>         <!--웹 문의 게시판-->
+      <li><a href="/qna">고객 지원</a></li>        <!--웹 문의 게시판-->
     </ul>
   </nav>
-
 </header>
 
 <main>
 
   <section id="banner">
     <h2>구갈동</h2>
-    <p>나만의 맛집 지도:D</p>
+    <p>자신의 맛집을 등록하여 지도에 추가하여 주세요:D</p>
   </section>
 
   <div id="map"></div>
+  <button type="submit" id="addbtn">새로운 장소 등록</button>
 
 </main>
 
 <footer>
-  <p>대표 E-mail : allone187@naver.com</p>
-  <p>Copyright ⓒ2023 Kimhww. All right reserved.</p>
+  <p>저작권 © 2023 웹 사이트. All rights reserved.</p>
 </footer>
 </body>
 </html>
