@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시글 리스트 페이지</title>
+</head>
+
+<style>
+
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h2{
+    width : 700px;
+    margin : 0 auto;
+    margin-top : 40px;
+  }
+
+  h3{
+    width : 700px;
+    margin : 0 auto;
+    margin-top : 20px;
+  }
+
+  .layout {
+    width : 700px;
+    margin : 0 auto;
+    margin-top : 40px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+
+  th {
+    background-color: #FF7443;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 630px;
+  }
+
+  button {
+    padding: 5px 10px;
+    background-color: #FF7443;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #FFBD8A;
+  }
+
+  strong {
+    color: orangered;
+  }
+
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .pagination a,
+  .pagination strong {
+    margin: 0 5px;
+  }
+
+  .form-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .form-container .write-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+  }
+
+</style>
+<body>
+
+
+<h2><a th:href="@{/home}" th:onclick="'location.href=\'/home\'; return false;'">My Chef</a></h2>
+<h3>문의 게시판</h3>  <!--<img src="/files/foxLogo.png" alt="My Image" width="40" height="40">-->
+
+<div class="layout">
+  <div class="form-container">
+    <form action="/board/write" method="get" enctype="multipart/form-data" class="write-button">
+      <button type="submit">문의 작성</button>
+    </form>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>글 번호</th>
+      <th>제목</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="board : ${list}">
+      <td th:text="${board.id}">1</td>
+      <td>
+        <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+      <a th:if="${page != nowPage}" th:href="@{/board/list(page = ${page - 1}, searchKeyword = ${param.searchKeyword})}" th:text="${page}"></a>
+      <strong th:if="${page == nowPage}" th:text="${page}" style="color : orangered"></strong>
+    </th:block>
+  </div>
+
+  <div class="form-container">
+    <form th:action="@{/board/list}" method="get">
+      <input type="text" name="searchKeyword">
+      <button type="submit">검색</button>
+    </form>
+  </div>
+
+</div>
+</body>
+</html>
