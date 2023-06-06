@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>My Chef</title>
 
@@ -132,6 +132,9 @@
     width: 95%;
     height: 400px;
     margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
   }
 
 </style>
@@ -170,6 +173,7 @@
 <footer>
   <p>대표 E-mail : allone187@naver.com</p>
   <p>Copyright ⓒ2023 Kimhww. All right reserved.</p>
+  session 값 확인: <p th:text="${session.loginEmail}"></p>
 </footer>
 </body>
 </html>

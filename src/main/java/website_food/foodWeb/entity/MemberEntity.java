@@ -27,7 +27,7 @@ public class MemberEntity {
     private String checkPassword;
 
     @Column(unique = true)
-    private String eMail;
+    private String email;
 
     @Column
     private String birth;
@@ -37,7 +37,7 @@ public class MemberEntity {
         memberEntity.setUsername(memberDTO.getUsername());
         memberEntity.setPassword(memberDTO.getPassword());
         memberEntity.setCheckPassword(memberDTO.getCheckPassword());
-        memberEntity.setEMail(memberDTO.getEMail());
+        memberEntity.setEmail(memberDTO.getEMail());
         memberEntity.setBirth(memberDTO.getBirth());
         return memberEntity;
     }
