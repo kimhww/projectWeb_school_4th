@@ -39,9 +39,7 @@
     }
 
     input[type="text"],
-    input[type="password"],
-    input[type="checkPassword"],
-    input[type="eMail"]{
+    input[type="password"] {
       width: 100%;
       padding: 5px;
       margin-bottom: 20px;
@@ -60,7 +58,8 @@
     .insertId,
     .insertPw,
     .insertChkPw,
-    .insertEMail{
+    .insertEMail,
+    .insertBirth{
       display: flex;
       justify-content: center;
       align-items: center;
@@ -70,25 +69,30 @@
 </head>
 <body>
 <h1>회원가입</h1>
-<form action="/signup" method="POST" class="signup-form">
+<form action="/member/signUp" method="POST" class="signup-form">
   <label for="username">ID</label>
   <div class="insertId">
-    <input type="text" id="username" name="username" required><br>
+    <input type="text" id="username" name="username" placeholder="아이디를 입력하세요" required><br>
   </div>
 
   <label for="password">PASSWORD</label>
   <div class="insertPw">
-    <input type="password" id="password" name="password" required><br>
+    <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required><br>
   </div>
 
   <label for="checkPassword">CHECK PASSWORD</label>
   <div class="insertChkPw">
-    <input type="checkPassword" id="checkPassword" name="password" required><br>
+    <input type="text" id="checkPassword" name="checkPassword" placeholder="비밀번호를 한번 더 입력하세요" required><br>
   </div>
 
   <label for="eMail">E-Mail</label>
   <div class="insertEMail">
-    <input type="eMail" id="eMail" name="eMail" required><br>
+    <input type="text" id="eMail" name="eMail" placeholder="이메일을 입력하세요" required><br>
+  </div>
+
+  <label for="birth">BirthDay</label>
+  <div class="insertBirth">
+    <input type="text" id="birth" name="birth" placeholder="생년월일 6자리를 입력하세요" required><br>
   </div>
 
   <input type="submit" value="회원가입" class="signupBtn">
