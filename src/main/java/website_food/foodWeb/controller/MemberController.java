@@ -30,6 +30,6 @@ public class MemberController {
         System.out.println("membercontroller.save");
         System.out.println("memberDTO = " + memberDTO);
         memberService.save(memberDTO);
-        return "home";
+        return "login";
     }
 }

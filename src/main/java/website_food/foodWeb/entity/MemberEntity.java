@@ -4,6 +4,7 @@ import lombok.Cleanup;
 import lombok.CustomLog;
 import lombok.Getter;
 import lombok.Setter;
+import website_food.foodWeb.dto.MemberDTO;
 
 import javax.persistence.*;
 
@@ -16,8 +17,8 @@ public class MemberEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String eMail;
+    @Column
+    private String username;
 
     @Column
     private String password;
@@ -25,9 +26,19 @@ public class MemberEntity {
     @Column
     private String checkPassword;
 
+    @Column(unique = true)
+    private String eMail;
+
     @Column
     private String birth;
 
-    @Column
-    private String username;
+    public static MemberEntity toMemberEntity(MemberDTO memberDTO) {
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setUsername(memberDTO.getUsername());
+        memberEntity.setPassword(memberDTO.getPassword());
+        memberEntity.setCheckPassword(memberDTO.getCheckPassword());
+        memberEntity.setEMail(memberDTO.getEMail());
+        memberEntity.setBirth(memberDTO.getBirth());
+        return memberEntity;
+    }
 }
