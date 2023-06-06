@@ -48,4 +48,10 @@ public class MemberController {
         memberService.save(memberDTO);
         return "home";
     }
+
+    @GetMapping("/member/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "home";
+    }
 }

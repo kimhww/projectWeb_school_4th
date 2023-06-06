@@ -15,6 +15,23 @@ public class webController {
         return "home";
     }
 
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
+
+    @GetMapping("/signUp")
+    public String signUpPage() {
+        return "signUp";
+    }
+
+    @PostMapping("/signUp")
+    public String signUp(@ModelAttribute MemberDTO memberDTO) {
+        System.out.println("membercontroller.save");
+        System.out.println("memberDTO = " + memberDTO);
+        return null;
+    }
+
     @GetMapping("/addPlace")
     public String addPlacePage(){
         return "addPlace";
